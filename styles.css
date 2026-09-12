@@ -33,3 +33,24 @@ body {
     background-color: var(--blanco);
     line-height: 1.6;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+select,
+input {
+    font: inherit;
+}
+
+button,
+select,
+label {
+    -webkit-tap-highlight-color: transparent;
+}
