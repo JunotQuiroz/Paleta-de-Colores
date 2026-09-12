@@ -15,3 +15,21 @@
     --radio: 18px;
     --sombra: 8px 8px 0 #171717;
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--texto);
+    background-color: var(--blanco);
+    line-height: 1.6;
+}
