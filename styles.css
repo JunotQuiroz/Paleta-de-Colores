@@ -127,3 +127,46 @@ input:focus-visible + label {
     background: var(--texto);
     transform: translateY(-2px);
 }
+
+.hero-section {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 5vw;
+    text-align: center;
+    background-color: var(--blanco);
+    background-image: url('./assets/hero-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    width: min(900px, 100%);
+}
+
+.hero-title {
+    margin: 0;
+    font-size: clamp(5rem, 16vw, 12rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+}
+
+.hero-subtitle {
+    margin: 2rem 0 0;
+    font-size: clamp(1.3rem, 3vw, 2.4rem);
+    font-weight: 500;
+}
+
+#palabra-dinamica {
+    display: inline-block;
+    margin-left: 0.2em;
+    padding: 0.05em 0.32em;
+    color: var(--blanco);
+    background: var(--naranja);
+    border: 2px solid var(--texto);
+    box-shadow: 4px 4px 0 var(--texto);
+    transform: rotate(-1.5deg);
+}
