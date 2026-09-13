@@ -575,3 +575,5 @@ input:focus-visible + label {
         animation-iteration-count: 1 !important;
     }
 }
+/* Reduce animaciones si el usuario así lo prefiere */
+
