@@ -302,3 +302,95 @@ input:focus-visible + label {
     border-radius: 14px;
     box-shadow: 4px 4px 0 var(--texto);
     }
+
+    .controles-paleta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: end;
+    padding: 2rem;
+    background: var(--fondo-suave);
+    border: 2px solid var(--texto);
+    border-radius: var(--radio);
+}
+
+.grupo-control {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.grupo-control legend {
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.opciones-cantidad,
+.opciones-formato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.opciones-cantidad input,
+.opciones-formato input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.opciones-cantidad label,
+.opciones-formato label {
+    min-width: 72px;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    font-weight: 900;
+    background: var(--blanco);
+    border: 2px solid var(--texto);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.opciones-cantidad label:hover,
+.opciones-formato label:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0 var(--texto);
+}
+
+.opciones-cantidad input:checked + label {
+    color: var(--blanco);
+    background: var(--azul);
+    box-shadow: 4px 4px 0 var(--texto);
+}
+
+.opciones-formato input:checked + label {
+    color: var(--blanco);
+    background: var(--verde);
+    box-shadow: 4px 4px 0 var(--texto);
+}
+
+.btn-principal {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 1rem 1.5rem;
+    color: var(--blanco);
+    background: var(--naranja);
+    border: 2px solid var(--texto);
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 var(--texto);
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-principal:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 9px 9px 0 var(--texto);
+}
+
+.btn-principal:active {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--texto);
+}
