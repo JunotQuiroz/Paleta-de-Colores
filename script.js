@@ -135,3 +135,35 @@ const radiosFormato =
 const toast =
     document.querySelector("#toast");
 
+let indicePalabra = 0;
+
+let paletaActual = [];
+
+let temporizadorToast;
+
+function iniciarRotadorPalabras() {
+
+    const reducirMovimiento =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+    if (reducirMovimiento) {
+        return;
+    }
+
+    setInterval(() => {
+
+        indicePalabra =
+            (indicePalabra + 1)
+            % palabrasHero.length;
+
+        palabraDinamica.textContent =
+            palabrasHero[indicePalabra];
+
+    }, 2500);
+
+}
+
+
+
