@@ -355,6 +355,161 @@ function convertirHslAHex(h, s, l) {
 
 }
 
+// GENERACIÓN DE COLORES //
+
+function crearColorAleatorio() {
+
+    const h =
+        numeroAleatorio(
+            0,
+            359
+        );
+
+    const s =
+        numeroAleatorio(
+            50,
+            90
+        );
+
+
+    const l =
+        numeroAleatorio(
+            35,
+            70
+        );
+
+
+    const hsl =
+        `hsl(${h}, ${s}%, ${l}%)`;
+
+
+    const hex =
+        convertirHslAHex(
+            h,
+            s,
+            l
+        );
+
+    return {
+        h,
+        s,
+        l,
+        hsl,
+        hex
+    };
+
+}
+
+
+//GENERACIÓN DE PALETA //
+
+function generarNuevaPaleta() {
+
+    const cantidad =
+        obtenerCantidadSeleccionada();
+
+    paletaActual = [];
+
+
+    for (
+        let i = 0;
+        i < cantidad;
+        i++
+    ) {
+
+        const color =
+            crearColorAleatorio();
+
+        paletaActual.push(
+            color
+        );
+
+    }
+
+    renderizarPaleta();
+
+}
+
+function renderizarPaleta() {
+
+    const formatoSeleccionado =
+        obtenerFormatoSeleccionado();
+
+    contenedorPaleta.innerHTML = "";
+
+    contenedorPaleta.dataset.cantidad =
+        paletaActual.length;
+
+    paletaActual.forEach((color) => {
+
+        const codigoVisible =
+            formatoSeleccionado === "hex"
+                ? color.hex
+                : color.hsl;
+
+        const tarjeta =
+            document.createElement(
+                "button"
+            );
+
+
+        tarjeta.type = "button";
+
+
+        tarjeta.classList.add(
+            "tarjeta-color"
+        );
+
+
+        tarjeta.style.setProperty(
+            "--color-tarjeta",
+            color.hex
+        );
+
+        tarjeta.setAttribute(
+            "aria-label",
+            `Copiar color ${codigoVisible} al portapapeles`
+        );
+
+        const codigo =
+            document.createElement(
+                "span"
+            );
+
+
+        codigo.classList.add(
+            "codigo-color"
+        );
+
+
+        codigo.textContent =
+            codigoVisible;
+
+
+        tarjeta.appendChild(
+            codigo
+        );
+
+        tarjeta.addEventListener(
+            "click",
+            () => {
+
+                copiarColor(
+                    codigoVisible
+                );
+
+            }
+        );
+
+        contenedorPaleta.appendChild(
+            tarjeta
+        );
+
+    });
+
+}
+
+
 
 
 
