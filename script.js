@@ -509,6 +509,111 @@ function renderizarPaleta() {
 
 }
 
+// COPIAR COLOR //
+
+async function copiarColor(codigo) {
+
+    if (!navigator.clipboard) {
+
+        mostrarToast(
+            "El portapapeles necesita HTTPS o localhost para funcionar."
+        );
+
+        return;
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            codigo
+        );
+
+        mostrarToast(
+            `${codigo} copiado al portapapeles`
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "No se pudo copiar el color:",
+            error
+        );
+
+        mostrarToast(
+            "No se pudo copiar el color."
+        );
+
+    }
+
+}
+
+
+// MICROFEEDBACK //
+
+function mostrarToast(mensaje) {
+
+    toast.textContent =
+        mensaje;
+
+    toast.classList.add(
+        "mostrar"
+    );
+
+
+    clearTimeout(
+        temporizadorToast
+    );
+
+    temporizadorToast =
+        setTimeout(
+            () => {
+
+                toast.classList.remove(
+                    "mostrar"
+                );
+
+            },
+            2200
+        );
+
+}
+
+
+// EVENTOS //
+
+industriaSelector.addEventListener(
+    "change",
+    mostrarRecomendacionIndustria
+);
+
+
+botonGenerar.addEventListener(
+    "click",
+    generarNuevaPaleta
+);
+
+radiosFormato.forEach((radio) => {
+
+    radio.addEventListener(
+        "change",
+        () => {
+
+            if (
+                paletaActual.length > 0
+            ) {
+
+                renderizarPaleta();
+
+            }
+
+        }
+    );
+
+});
+
+iniciarRotadorPalabras();
 
 
 
