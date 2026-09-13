@@ -165,5 +165,199 @@ function iniciarRotadorPalabras() {
 
 }
 
+function mostrarRecomendacionIndustria() {
+
+    const industriaSeleccionada =
+        industriaSelector.value;
+
+    const recomendacion =
+        recomendacionesIndustria[
+            industriaSeleccionada
+        ];
+
+    if (!recomendacion) {
+
+        resultadoRecomendacion.hidden = true;
+
+        return;
+    }
+
+    tituloRecomendacion.textContent =
+        recomendacion.titulo;
+
+    textoRecomendacion.textContent =
+        recomendacion.texto;
+
+    coloresRecomendados.innerHTML = "";
+
+    recomendacion.colores.forEach((color) => {
+
+        const swatch =
+            document.createElement("div");
+
+        swatch.classList.add(
+            "swatch-recomendado"
+        );
+
+        swatch.style.backgroundColor =
+            color.hex;
+
+        swatch.setAttribute(
+            "role",
+            "img"
+        );
+
+        swatch.setAttribute(
+            "aria-label",
+            `${color.nombre}: ${color.hex}`
+        );
+
+        swatch.title =
+            `${color.nombre} · ${color.hex}`;
+
+        coloresRecomendados.appendChild(
+            swatch
+        );
+
+    });
+
+    resultadoRecomendacion.hidden = false;
+
+}
+
+function numeroAleatorio(min, max) {
+
+    return Math.floor(
+        Math.random()
+        * (max - min + 1)
+    ) + min;
+
+}
+
+function obtenerCantidadSeleccionada() {
+
+    const opcionSeleccionada =
+        document.querySelector(
+            'input[name="cantidad"]:checked'
+        );
+
+    return Number(
+        opcionSeleccionada.value
+    );
+
+}
+
+function obtenerFormatoSeleccionado() {
+
+    const opcionSeleccionada =
+        document.querySelector(
+            'input[name="formato"]:checked'
+        );
+
+
+    return opcionSeleccionada.value;
+
+}
+
+// HSL - HEX 
+
+function convertirHslAHex(h, s, l) {
+
+    s /= 100;
+    l /= 100;
+
+    const c =
+        (1 - Math.abs(2 * l - 1)) * s;
+
+    const x =
+        c
+        * (
+            1
+            - Math.abs(
+                (h / 60) % 2 - 1
+            )
+        );
+
+    const m =
+        l - c / 2;
+
+    let r = 0;
+    let g = 0;
+    let b = 0;
+
+    if (h >= 0 && h < 60) {
+
+        r = c;
+        g = x;
+
+    } else if (h < 120) {
+
+        r = x;
+        g = c;
+
+    } else if (h < 180) {
+
+        g = c;
+        b = x;
+
+    } else if (h < 240) {
+
+        g = x;
+        b = c;
+
+    } else if (h < 300) {
+
+        r = x;
+        b = c;
+
+    } else {
+
+        r = c;
+        b = x;
+
+    }
+
+
+    r = Math.round(
+        (r + m) * 255
+    );
+
+    g = Math.round(
+        (g + m) * 255
+    );
+
+    b = Math.round(
+        (b + m) * 255
+    );
+
+
+    const rojoHex =
+        r
+            .toString(16)
+            .padStart(2, "0");
+
+
+    const verdeHex =
+        g
+            .toString(16)
+            .padStart(2, "0");
+
+
+    const azulHex =
+        b
+            .toString(16)
+            .padStart(2, "0");
+
+
+    return (
+        `#${rojoHex}${verdeHex}${azulHex}`
+    ).toUpperCase();
+
+}
+
+
+
+
+
 
 
