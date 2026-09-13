@@ -103,3 +103,35 @@ const recomendacionesIndustria = {
 
 };
 
+const palabraDinamica =
+    document.querySelector("#palabra-dinamica");
+
+const industriaSelector =
+    document.querySelector("#industria-selector");
+
+const resultadoRecomendacion =
+    document.querySelector("#resultado-recomendacion");
+
+const tituloRecomendacion =
+    document.querySelector("#titulo-recomendacion");
+
+const textoRecomendacion =
+    document.querySelector("#texto-recomendacion");
+
+const coloresRecomendados =
+    document.querySelector("#colores-recomendados");
+
+const botonGenerar =
+    document.querySelector("#btn-generar");
+
+const contenedorPaleta =
+    document.querySelector("#contenedor-paleta");
+
+const radiosFormato =
+    document.querySelectorAll(
+        'input[name="formato"]'
+    );
+
+const toast =
+    document.querySelector("#toast");
+
