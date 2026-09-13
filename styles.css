@@ -474,3 +474,17 @@ input:focus-visible + label {
     visibility: visible;
     transform: translate(-50%, 0);
 }
+
+.site-footer {
+    margin-top: 4rem;
+    padding: 2rem 5vw;
+    color: var(--blanco);
+    background: var(--texto);
+    text-align: center;
+    border-top: 8px solid var(--azul);
+}
+
+.site-footer p {
+    margin: 0;
+    font-weight: 700;
+}
