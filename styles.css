@@ -450,3 +450,27 @@ input:focus-visible + label {
     background: rgba(255, 255, 255, 0.9);
     border-top: 2px solid var(--texto);
 }
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 2rem;
+    z-index: 2000;
+    max-width: min(90vw, 520px);
+    padding: 0.85rem 1.2rem;
+    color: var(--blanco);
+    background: var(--texto);
+    border: 2px solid var(--blanco);
+    border-radius: 999px;
+    box-shadow: 5px 5px 0 var(--naranja);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 18px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.toast.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
