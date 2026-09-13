@@ -218,3 +218,28 @@ input:focus-visible + label {
     transform: rotate(-1deg);
     z-index: -1;
 }
+
+.teoria-contenido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.teoria-contenido p {
+    margin: 0;
+    padding: 1.75rem;
+    font-size: 1.05rem;
+    background: var(--fondo-suave);
+    border: 2px solid var(--texto);
+    border-top: 10px solid var(--azul);
+    border-radius: var(--radio);
+}
+
+.teoria-contenido p:nth-child(2) {
+    border-top-color: var(--naranja);
+    transform: translateY(1.5rem);
+}
+
+.teoria-contenido p:nth-child(3) {
+    border-top-color: var(--verde);
+}
