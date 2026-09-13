@@ -170,3 +170,51 @@ input:focus-visible + label {
     box-shadow: 4px 4px 0 var(--texto);
     transform: rotate(-1.5deg);
 }
+
+.teoria-section,
+.recomendador-section,
+.generador-section {
+    --acento: var(--azul);
+    width: min(var(--ancho-contenido), 90vw);
+    margin: 0 auto;
+    padding: 7rem 0;
+    border-top: 8px solid var(--acento);
+}
+
+.teoria-section {
+    --acento: var(--azul);
+}
+
+.recomendador-section {
+    --acento: var(--verde);
+}
+
+.generador-section {
+    --acento: var(--naranja);
+}
+
+.teoria-section h2,
+.recomendador-section h2,
+.generador-section h2 {
+    position: relative;
+    width: fit-content;
+    max-width: 900px;
+    margin: 0 0 3rem;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.teoria-section h2::after,
+.recomendador-section h2::after,
+.generador-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 35%;
+    height: 0.22em;
+    background: var(--acento);
+    transform: rotate(-1deg);
+    z-index: -1;
+}
