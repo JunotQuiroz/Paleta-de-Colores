@@ -125,7 +125,7 @@ const botonGenerar =
     document.querySelector("#btn-generar");
 
 const resultadoPaleta =
-    document.querySelector("#resultado-paleta");
+    document.querySelector(".resultado-paleta");
 
 const contenedorPaleta =
     document.querySelector("#contenedor-paleta");
@@ -428,6 +428,8 @@ function generarNuevaPaleta() {
         );
 
     }
+resultadoPaleta.hidden = false;
+renderizarPaleta();
 
     renderizarPaleta();
 
