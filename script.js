@@ -124,6 +124,9 @@ const coloresRecomendados =
 const botonGenerar =
     document.querySelector("#btn-generar");
 
+const resultadoPaleta =
+    document.querySelector("#resultado-paleta");
+
 const contenedorPaleta =
     document.querySelector("#contenedor-paleta");
 
