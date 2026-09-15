@@ -68,6 +68,7 @@ ProyectoM1_JunotQuiroz/
 
 ---
 
+```markdown
 ## Cómo usar CLRS
 
 1. Selecciona una industria en el recomendador para consultar una sugerencia de color.
