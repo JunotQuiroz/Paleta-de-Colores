@@ -65,8 +65,8 @@ ProyectoM1_JunotQuiroz/
 └── assets/
     ├── hero-background.png
     └── captura-clrs.png
-
 ```markdown
+
 ---
 
 ## Cómo usar CLRS
