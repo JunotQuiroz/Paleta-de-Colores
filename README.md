@@ -49,3 +49,74 @@ CLRS integra distintas herramientas orientadas a explorar y trabajar con el colo
 | GitHub | Repositorio y documentación |
 | GitHub Pages | Despliegue de la aplicación |
 | Markdown | Documentación del proyecto |
+
+---
+
+## Estructura del proyecto
+
+ProyectoM1_JunotQuiroz/
+│
+├── index.html
+├── styles.css
+├── script.js
+├── README.md
+│
+└── assets/
+    ├── hero-background.png
+    └── captura-clrs.png
+
+---
+
+## Cómo usar CLRS
+
+1. Selecciona una industria en el recomendador para consultar una sugerencia de color.
+2. Dirígete al generador de paletas.
+3. Elige si deseas generar 6, 8 o 9 colores.
+4. Selecciona el formato HEX o HSL.
+5. Presiona **Generar paleta**.
+6. Haz clic sobre cualquier color para copiar su código al portapapeles.
+7. Cambia entre HEX y HSL para visualizar la misma paleta en ambos formatos.
+
+---
+
+## Cómo usar CLRS
+
+1. Selecciona una industria en el recomendador para consultar una sugerencia de color.
+2. Dirígete al generador de paletas.
+3. Elige si deseas generar 6, 8 o 9 colores.
+4. Selecciona el formato HEX o HSL.
+5. Presiona **Generar paleta**.
+6. Haz clic sobre cualquier color para copiar su código al portapapeles.
+7. Cambia entre HEX y HSL para visualizar la misma paleta en ambos formatos.
+
+---
+
+## Decisiones técnicas
+
+### Generación y representación del color
+
+Los colores se generan a partir de valores HSL aleatorios. Cada color se almacena como un objeto de JavaScript que contiene tanto su representación HSL como su equivalente en HEX.
+
+Esto permite alternar entre ambos formatos sin generar una nueva paleta.
+
+### Render dinámico
+
+Las tarjetas de color no están escritas directamente en el HTML.
+
+JavaScript crea cada tarjeta dinámicamente con `document.createElement()` de acuerdo con la cantidad seleccionada por el usuario.
+
+### Selección de cantidad
+
+La elección entre 6, 8 o 9 colores utiliza controles `radio`, ya que solo puede existir una opción activa al mismo tiempo.
+
+### Copiado al portapapeles
+
+Cada tarjeta de color funciona como un botón interactivo. Al hacer clic, el código visible se copia mediante la Clipboard API y se muestra un mensaje de confirmación.
+
+### Separación de responsabilidades
+
+El proyecto mantiene una separación clara entre tecnologías:
+
+- HTML: estructura y semántica.
+- CSS: apariencia, distribución y responsive design.
+- JavaScript: comportamiento, eventos y manipulación del DOM.
