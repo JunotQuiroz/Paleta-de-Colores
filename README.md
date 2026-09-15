@@ -54,6 +54,7 @@ CLRS integra distintas herramientas orientadas a explorar y trabajar con el colo
 
 ## Estructura del proyecto
 
+```text
 ProyectoM1_JunotQuiroz/
 │
 ├── index.html
@@ -64,18 +65,6 @@ ProyectoM1_JunotQuiroz/
 └── assets/
     ├── hero-background.png
     └── captura-clrs.png
-
----
-
-## Cómo usar CLRS
-
-1. Selecciona una industria en el recomendador para consultar una sugerencia de color.
-2. Dirígete al generador de paletas.
-3. Elige si deseas generar 6, 8 o 9 colores.
-4. Selecciona el formato HEX o HSL.
-5. Presiona **Generar paleta**.
-6. Haz clic sobre cualquier color para copiar su código al portapapeles.
-7. Cambia entre HEX y HSL para visualizar la misma paleta en ambos formatos.
 
 ---
 
